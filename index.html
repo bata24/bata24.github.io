@@ -1,12 +1,127 @@
+<!-- index.html -->
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>bata24/gef</title>
-  </head>
-  <body>
-    <h1>bata24/gef</h1>
-    <p><a href="https://github.com/bata24/gef">GitHub Repository</a></p>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="GEF - GDB Enhanced Features - bata24's fork" />
+
+  <title>bata24/gef</title>
+
+  <link rel="icon" type="image/png" href="res/icon.png" />
+  <link rel="stylesheet" href="res/styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand" aria-label="bata24/gef">
+      <img
+        class="brand-icon"
+        src="res/icon.png"
+        alt=""
+        width="32"
+        height="32"
+        loading="eager"
+        decoding="async"
+      />
+      <div class="brand-text">
+        <div class="brand-name">bata24/gef</div>
+        <div class="brand-sub">GEF - GDB Enhanced Features - bata24's fork</div>
+      </div>
+    </div>
+
+    <a class="button button-primary"
+       href="https://github.com/bata24/gef"
+       target="_blank" rel="noopener noreferrer">
+      View on GitHub
+    </a>
+  </header>
+
+  <main class="main">
+    <section class="hero" aria-label="Hero">
+      <div class="hero-left">
+        <h1 class="hero-title">
+          Debug faster. <span class="hero-title-accent">Go deeper.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          A GEF fork focused on practical power: heuristic kernel debugging without a symbolized vmlinux,
+          broader architecture support, and heap dump tooling for multiple allocators.
+        </p>
+
+        <div class="badges" aria-label="Support info">
+          <span class="badge badge-strong">Official support: Ubuntu only</span>
+          <span class="badge">GDB + Python</span>
+          <span class="badge">Kernel / Heap / Multi-arch</span>
+        </div>
+
+        <div class="install" aria-label="Quick install">
+          <div class="install-head">
+            <div class="install-title">Quick install</div>
+            <div class="install-note">See GitHub for details and options.</div>
+          </div>
+          <pre class="code"><code>wget -q https://raw.githubusercontent.com/bata24/gef/dev/install-uv.sh -O- | sudo sh</code></pre>
+        </div>
+
+        <div class="run-example" aria-label="Launch GDB">
+          <div class="run-example-head">
+            <div class="run-example-title">Run GDB</div>
+            <div class="run-example-note">for user-land</div>
+          </div>
+          <pre class="code"><code>sudo gdb /bin/ls</code></pre>
+
+          <div class="run-example-head">
+            <div class="run-example-title"> </div>
+            <div class="run-example-note">for kernel (qemu-system stub)</div>
+          </div>
+          <pre class="code"><code>sudo gdb -ex 'target remote :1234'</code></pre>
+        </div>
+
+      </div>
+
+      <div class="hero-right" aria-label="Logo">
+        <div class="logo-card">
+          <img
+            class="logo"
+            src="res/logo.png"
+            alt="bata24/gef logo"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="features" aria-label="Key features">
+      <article class="feature">
+        <h2 class="feature-title">Kernel debugging, no symbols required</h2>
+        <p class="feature-text">
+          Heuristic commands designed to work even without a symbolized <span class="mono">vmlinux</span>.
+        </p>
+      </article>
+
+      <article class="feature">
+        <h2 class="feature-title">Many architectures</h2>
+        <p class="feature-text">
+          Expanded architecture coverage for <span class="mono">qemu-user</span> workflows.
+        </p>
+      </article>
+
+      <article class="feature">
+        <h2 class="feature-title">Heap dumps for multiple allocators</h2>
+        <p class="feature-text">
+          Built-in heap dump commands to support real-world reverse engineering.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> <a class="footer-link" href="https://x.com/bata_24" target="_blank" rel="noopener noreferrer">bata24</a></span>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = String(new Date().getFullYear());
+  </script>
+</body>
 </html>
